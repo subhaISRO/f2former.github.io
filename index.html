@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+         .container {
+            max-width: 90%; /* Increase the width of the container */
+            padding: 0; /* Remove extra padding */
+        }
+        .slide-section {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .text-center {
+            text-align: center;
+        }
+        .main-image img {
+            width: 100%;
+            max-width: 95%;
+            margin: 20px auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .project-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin: 0 15px; /* Adds space between links */
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #007bff;
+            /* border: 1px solid #007bff;
+            border-radius: 5px; */
+            transition: background-color 0.3s ease;
+        }
+
+        .project-links a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .bibtex-container {
+        background-color: #f9f9f9;
+        /* padding: 10px;
+        border-radius: 5px; */
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Project Title Section -->
+        <div class="slide-section">
+            <h3 class="text-center">F2former: When Fractional Fourier Meets Deep Wiener Deconvolution and
+                Selective Frequency Transformer for Image Deblurring</h3>
+
+            <h5 class="text-center"><a href="https://subhaisro.github.io/subhajitpaul1998.github.io/" target="_blank">Subhajit Paul<sup>1</sup></a>, <a href="" target="_blank">Sahil Kumawat<sup>2</sup></a>, <a href="https://www.researchgate.net/profile/Ashutosh-Gupta-20" target="_blank">Ashutosh Gupta<sup>1</sup></a>, <a href="https://www.iist.ac.in/avionics/deepak.mishra" target="_blank">Deepak Mishra<sup>2</sup></a></h5>
+            <p class="text-center"><sup>1</sup>Space Applications Centre (SAC), <sup>2</sup>Indian Institute of Space Science and Technology (IIST)</p>
+            <div class="main-image">
+                <img src="F2formmer.002.png" alt="Project Main Image">
+            </div>
+            <div class="project-links">
+                <a href="https://arxiv.org/abs/2409.02056" target="_blank">[Paper]</a>
+    
+            </div>
+            <p> Proposed Fractional Fourier based Transformer (F2former) leverages the property of better handling of non-stationary signals
+                like images for different image deblurring scenarios. As fractional Fourier transform (FRFT) analyses the joint distribution
+                between spatial and frequency domain information, our FRFT based model outperforms other SOTA methods especially in complex
+                scenarios like non-uniform and real-world blur situations as shown in above test scenarios for different datasets.
+            </p>
+        </div>
+
+        <!-- Abstract Section -->
+        <div class="slide-section">
+            <h4>Abstract</h4>
+            <p>
+                Recent progress in image deblurring techniques focuses mainly on operating in both frequency and spatial domains using the Fourier 
+                transform (FT) properties. However, their performance is limited due to the dependency of FT on stationary signals and its lack of 
+                capability to extract spatial-frequency properties. In this paper, we propose a novel approach based on the Fractional Fourier Transform 
+                (FRFT), a unified spatial-frequency representation leveraging both spatial and frequency components simultaneously, making it ideal for 
+                processing non-stationary signals like images. Specifically, we introduce a Fractional Fourier Transformer (F2former), where we combine 
+                the classical fractional Fourier based Wiener deconvolution (F2WD) as well as a multi-branch encoder-decoder transformer based on a new 
+                fractional frequency aware transformer block (F2TB). We design F2TB consisting of a fractional frequency aware self-attention (F2SA) to 
+                estimate element-wise product attention based on important frequency components and a novel feed-forward network based on frequency 
+                division multiplexing (FM-FFN) to refine high and low frequency features separately for efficient latent clear image restoration. 
+                Experimental results for the cases of both motion deblurring as well as defocus deblurring show that the performance of our proposed 
+                method is superior to other state-of-the-art (SOTA) approaches.
+            </p>
+        </div>
+
+        <!-- Contributions Section -->
+        <div class="">
+            <h4>Contributions</h4>
+            <p>1. Design of a Fractional Feature-based Wiener Deconvolution (F2WD) layer to enhance the shallow-level features given a blurry input. As FRFT is capable of capturing spatially varying artefacts, F2WD efficiently performs deblurring in feature space.</p>
+            <p>2. We develop a novel building block, Fractional Hybrid Transformer Block (FHTB) to efficiently reconstruct the deblurred image. FHTB is composed of Fractional Fourier based Feature Refinement module (F3RB) and also a Transformer Block (F2TB) to extract local and global context features, respectively.</p>
+            <p>3. We design F2TB with Fractional Frequency aware Self-Attention (F2SA) for efficient computation and selective emphasis on key frequency components, and Frequency Division Multiplexing-based FFN (FM-FFN) to dynamically extract high and low frequency features using a cosine bell function for optimal frequency recovery. </p>
+            <p>4. We conduct experiments to demonstrate the effectiveness of the proposed F2former for motion and defocus blurring, showing significant performance improvements over other SOTA models. We also provide a detailed ablation study to validate the contribution of each module.</p>
+        </div>
+
+        <div class="slide-section"></div>
+            <h4>Overall Framework</h4>
+            <div class="main-image">
+                <img src="overall_architecture.png" alt="Project Main Image">
+            </div>
+            
+        </div>
+
+        <!-- Results Section -->
+        <div class="slide-section">
+            <h4>Result on GoPro test dataset</h4>
+            <div class="main-image">
+                <img src="WACV_2025_F2former_supplementary-6-cropped.pdf" alt="Project Main Image">
+            </div>
+        </div>
+
+        <div class="slide-section">
+            <h4>Result on DDPD single-pixel test dataset</h4>
+            <div class="main-image">
+                <img src="WACV_2025_F2former_supplementary-7-cropped.pdf" alt="Project Main Image">
+            </div>
+        </div>
+
+        <div class="slide-section"></div>
+            <h4>Result on DDPD dual-pixel test dataset</h4>
+            <div class="main-image">
+                <img src="WACV_2025_F2former_supplementary-8-cropped.pdf" alt="Project Main Image">
+            </div>
+        </div>
+
+        <div class="slide-section"></div>
+            <h4>Result on RealBlur-J test dataset</h4>
+            <div class="main-image">
+                <img src="WACV_2025_F2former_supplementary-9-cropped.pdf" alt="Project Main Image">
+            </div>
+        </div>
+
+        <div class="slide-section"></div>
+            <h4>Result on HIDE test dataset</h4>
+            <div class="main-image">
+                <img src="WACV_2025_F2former_supplementary-10-cropped.pdf" alt="Project Main Image">
+            </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="slide-section">
+            <h4>Ablation Study</h4>
+            <p>We perform analysis to justify our choices in our DEM SR model.</p>
+            <div class="main-image">
+                <img src="f2former_ablation.001.png" alt="Project Main Image">
+            </div>
+        </div>
+
+        <div class="slide-section">
+            <h4>Bibtex</h4>
+            <div class="bibtex-container">
+                <pre>
+        @article{paul2025f2former,
+          title={F2former: When Fractional Fourier Meets Deep Wiener Deconvolution and
+            Selective Frequency Transformer for Image Deblurring},
+          author={Paul, Subhajit and Kumawat, Sahil and Gupta, Ashutosh and Mishra, Deepak},
+          journal={IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+          year={2025}
+        }
+                </pre>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
